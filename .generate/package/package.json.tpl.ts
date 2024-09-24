@@ -44,7 +44,7 @@ export const generate = (context: Context) =>
         scripts: {
           prepublish: 'npm run compile',
           pack: 'npm pack --pack-destination ../generators/test/build',
-          compile: 'shx rm -rf lib/ && tsc && npm run pack',
+          compile: 'shx rm -rf lib/ && tsc',
           test: 'mocha --config ../../.mocharc.json --recursive test/**.test.ts test/**/*.test.ts'
         },
         publishConfig: {

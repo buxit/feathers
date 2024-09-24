@@ -1,27 +1,11 @@
 import chalk from 'chalk'
 import { Command } from 'commander'
-import { dirname } from 'path'
-import { runGenerator, getContext, FeathersBaseContext, version } from '@feathersjs/generators'
-import { createRequire } from 'node:module'
 
 export * from 'commander'
 export { chalk }
 
-const require = createRequire(import.meta.url)
-
 export const commandRunner = (name: string) => async (options: any) => {
-  const folder = dirname(require.resolve('@feathersjs/generators'))
-  const ctx = getContext<FeathersBaseContext>({
-    ...options
-  })
-
-  await Promise.resolve(ctx)
-    .then(runGenerator(folder, name, 'index.js'))
-    .catch((error) => {
-      const { logger } = ctx.pinion
-
-      logger.error(`Error: ${chalk.white(error.message)}`)
-    })
+  console.log('TO DO', name, options)
 }
 
 export const program = new Command()
@@ -29,7 +13,7 @@ export const program = new Command()
 program
   .name('feathers')
   .description('The Feathers command line interface 🕊️')
-  .version(version)
+  .version('6.0.0')
   .showHelpAfterError()
 
 const generate = program.command('generate').alias('g')
