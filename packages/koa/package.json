@@ -71,7 +71,7 @@
     "@feathersjs/tests": "^5.0.31",
     "@types/koa-compose": "^3.2.8",
     "@types/mocha": "^10.0.9",
-    "@types/node": "^22.8.4",
+    "@types/node": "^22.8.6",
     "axios": "^1.7.7",
     "mocha": "^10.8.2",
     "shx": "^0.3.4",
