@@ -253,8 +253,8 @@ export const prettify =
   ) =>
   async (ctx: C) => {
     const fileName = await getFileName(target, ctx)
-    const content = (await readFile(fileName)).toString()
     const config = (await prettier.resolveConfig('')) || options
+    const content = (await readFile(fileName)).toString()
 
     try {
       await writeFile(
